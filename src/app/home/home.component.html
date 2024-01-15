@@ -6,18 +6,26 @@
 
     <button mat-raised-button color="primary" [routerLink]="['/new']">Añadir</button>
 
-    <mat-list class="home__list">
-        @for (hero of heroesFiltered; track hero.id) {
-            <mat-list-item>
-                <span matListItemTitle>{{ hero.name }}</span>
-                <mat-icon fontIcon="edit" [routerLink]="['/edit', hero.id]" class="home__list-icon"
-                    aria-hidden="false" aria-label="Edit icon"></mat-icon>
-                <mat-icon fontIcon="delete" (click)="deleteHero(hero.id)" class="home__list-icon"
-                    aria-hidden="false" aria-label="Delete icon"></mat-icon>
-            </mat-list-item>
-        } @empty {
-            <!-- If no heroes were found -->
-            <span>No heroes found</span>
-        }
-    </mat-list>
+    @defer (on timer(1s)) {
+        <mat-list class="home__list">
+            @for (hero of heroesFiltered; track hero.id) {
+                <mat-list-item>
+                    <span matListItemTitle>{{ hero.name }}</span>
+                    <mat-icon fontIcon="edit" [routerLink]="['/edit', hero.id]" class="home__list-icon"
+                        aria-hidden="false" aria-label="Edit icon"></mat-icon>
+                    <mat-icon fontIcon="delete" (click)="deleteHero(hero.id)" class="home__list-icon"
+                        aria-hidden="false" aria-label="Delete icon"></mat-icon>
+                </mat-list-item>
+            } @empty {
+                <!-- If no heroes were found -->
+                <span>No se encontraron heroes</span>
+            }
+        </mat-list>
+    } @placeholder {
+        <app-spinner></app-spinner>
+    } @loading {
+        <app-spinner></app-spinner>
+    } @error {
+        <span>Algo salió mal</span>
+    }
 </div>
