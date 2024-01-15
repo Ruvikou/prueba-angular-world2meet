@@ -1,0 +1,9 @@
+<div class="edit">
+    <p>Heroe a editar: {{ selectedHero?.name }}</p>
+    <mat-form-field class="edit__input">
+        <mat-label>Nombre</mat-label>
+        <input matInput placeholder="Nombre..." [formControl]="newName">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="editHero()">Confirmar</button>
+</div>
