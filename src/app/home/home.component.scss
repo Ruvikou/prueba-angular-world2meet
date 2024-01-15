@@ -1,0 +1,14 @@
+.home {
+    margin: auto;
+    width: 75%;
+    &__input {
+        width: 100%;
+    }
+    &__list {
+        text-align: center;
+    }
+    &__list-icon {
+        margin-left: 1rem;
+        cursor: pointer;
+    }
+}

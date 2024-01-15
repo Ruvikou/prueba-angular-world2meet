@@ -1,1 +1,23 @@
-<p>home works!</p>
+<div class="home">
+    <mat-form-field class="home__input">
+        <mat-label>Nombre</mat-label>
+        <input matInput placeholder="Nombre..." [formControl]="searchName" (keyup)="search()">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" [routerLink]="['/new']">Añadir</button>
+
+    <mat-list class="home__list">
+        @for (hero of heroesFiltered; track hero.id) {
+            <mat-list-item>
+                <span matListItemTitle>{{ hero.name }}</span>
+                <mat-icon fontIcon="edit" [routerLink]="['/edit', hero.id]" class="home__list-icon"
+                    aria-hidden="false" aria-label="Edit icon"></mat-icon>
+                <mat-icon fontIcon="delete" (click)="deleteHero(hero.id)" class="home__list-icon"
+                    aria-hidden="false" aria-label="Delete icon"></mat-icon>
+            </mat-list-item>
+        } @empty {
+            <!-- If no heroes were found -->
+            <span>No heroes found</span>
+        }
+    </mat-list>
+</div>
