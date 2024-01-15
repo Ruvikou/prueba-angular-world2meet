@@ -1,0 +1,37 @@
+.spinner {
+    margin: 30px auto;
+    position: relative;
+    -webkit-animation: rotateSpinner 1.3s linear infinite;
+    -moz-animation: rotateSpinner 1.3s linear infinite;
+    animation: rotateSpinner 1.3s linear infinite;
+}
+
+@-webkit-keyframes rotateSpinner {
+    from {
+         -webkit-transform: rotate(360deg);
+    }
+
+    to {
+         -webkit-transform: rotate(0deg);
+    }
+}
+
+@-moz-keyframes rotateSpinner {
+    from {
+         -moz-transform: rotate(360deg);
+    }
+
+    to {
+         -moz-transform: rotate(0deg);
+    }
+}
+
+@keyframes rotateSpinner {
+    from {
+         transform: rotate(360deg);
+    }
+
+    to {
+         transform: rotate(0deg);
+    }
+}
