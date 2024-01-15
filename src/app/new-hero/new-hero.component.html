@@ -1,0 +1,9 @@
+<div class="new">
+    <p>Añade un nombre para el nuevo heroe</p>
+    <mat-form-field class="new__input">
+        <mat-label>Nombre</mat-label>
+        <input matInput placeholder="Nombre..." [formControl]="inputName">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="newHero()">Confirmar</button>
+</div>
