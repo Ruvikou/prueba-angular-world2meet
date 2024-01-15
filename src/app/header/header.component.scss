@@ -7,8 +7,11 @@
     z-index: 10;
     box-shadow: 0 2px 5px #0000004d;
     display: flex;
-    background-color: #00f0aa;
+    background-color: #686868;
     justify-content: center;
+    &__h1 {
+        padding-top: 1rem;
+    }
     &__img {
         width: 5rem;
     }
